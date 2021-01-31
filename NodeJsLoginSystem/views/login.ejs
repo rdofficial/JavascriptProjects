@@ -1,0 +1,82 @@
+<!-- The login page for the web application -->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Log In</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<!-- Linking to the bootstrap CSS -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+</head>
+
+<body>
+	<!-- The body section of the page -->
+
+	<!-- The header of the page -->
+	<nav class="navbar navbar-dark bg-dark">
+  		<a class="navbar-brand mx-2" href="#">Log In - Login System (NodeJS)</a>
+	</nav>
+
+	<!-- Displaying the login form -->
+	<div class="container my-5">
+		<form>
+			<div class="form-group">
+				<label for="exampleInputEmail1">Username</label>
+				<input type="text" class="form-control" name="username" placeholder="Username">
+			</div>
+			<div class="form-group">
+				<label for="exampleInputPassword1">Password</label>
+				<input type="password" class="form-control" name="password" placeholder="Password">
+			</div>
+			<button class="btn btn-success my-2" id="login-btn">Log In</button>
+			<a class="btn btn-primary ml-4" href="/signup">Sign Up</a>
+		</form>
+	</div>
+
+</body>
+
+<!-- Linking the HTML doc to the BootStrap required JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+
+<!-- The custom JS for this page -->
+<script type="text/javascript">
+	// The JavaScript for the login page
+
+	document.getElementById('login-btn').addEventListener('click', (e) => {
+		/* The function to be executed when the user clicks on the login button */
+
+		e.preventDefault();
+
+		// Getting the user inputs
+		const username = document.querySelector('input[name="username"]');
+		const password = document.querySelector('input[name="password"]');
+
+		// Creating a POST request data
+		let data = JSON.stringify({username : username.value, password : password.value});
+
+		fetch('/login', {body : data, method : 'post', headers : {'Accept': 'application/json', 'Content-Type' : 'application/json'}}).then(response => response.text()).then(response => {
+			/* After the response is returned from the server */
+
+			// Checking the response
+			if (response == 'success') {
+				// If the response states success, it means that we are successfully logged in, so we redirect the user to the home page
+
+				location.href = '/';
+			} else if (response == 'incorrect') {
+				// If the response states incorrect password, then we throw an error stating there is incorrect username and password combination
+
+				throw Error(`Incorrect password for the account with username ${username.value}`);
+			} else if (response == 'not found') {
+				// If the response states not found, it means there is no such user available as per the user requested username
+
+				throw Error(`No such account found with username ${username.value}`);
+			} else {
+				// If there is an unknown response, we just say error and print the response on the web browser console
+
+				throw Error('There is an error while executing the specified process');
+			}
+		}).catch(error => alert(error));
+	});
+</script>
+</html>

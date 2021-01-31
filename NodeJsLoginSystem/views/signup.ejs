@@ -1,0 +1,103 @@
+<!-- The signup page for the web application -->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Login System - NodeJS</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<!-- Linking the HTML doc to the Bootstrap CSS -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+</head>
+
+<body>
+	<!-- The body section of the page -->
+
+	<!-- The header -->
+	<nav class="navbar navbar-dark bg-dark">
+  		<a class="navbar-brand mx-2" href="#">Sign Up - Login System (NodeJS)</a>
+	</nav>
+
+	<!-- The signup form -->
+	<div class="container my-5">
+		<form>
+			<div class="form-group">
+				<label for="username">Username</label>
+				<input type="text" class="form-control" name="username">
+			</div>
+			<div class="form-group">
+				<label for="password">Password</label>
+				<input type="password" class="form-control" name="password">
+				<small class="form-text text-muted">Please choose a strong password for more secure experience.</small>
+			</div>
+			<div class="form-group">
+				<label for="confirm-password">Confirm password</label>
+				<input type="password" class="form-control" name="confirm-password">
+			</div>
+			<button class="btn btn-primary my-2" id="signup-btn">Submit</button>
+		</form>
+	</div>
+</body>
+
+<!-- Linking the HTML doc to the external Boostrap required JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+
+<!-- The custom JS for this page -->
+<script type="text/javascript">
+	// The JavaScript code for the Sign Up page
+
+	// Fetching the Signup Button HTML element
+	const signupBtn = document.getElementById('signup-btn');
+
+	// Adding an event listener to the sign up button
+	signupBtn.addEventListener('click', (e) => {
+		/* The function to be executed after the user clicks on the signup button. First we will get the user entered details and verify them, later on continuing to send the post request with the appropriate data. */
+
+		e.preventDefault();
+
+		// Getting the user inputs (username input text, password and confirm passwords)
+		let username = document.querySelector('input[name="username"]');
+		let password = document.querySelector('input[name="password"]');
+		let confirmPassword = document.querySelector('input[name="confirm-password"]');
+
+		// Checking the username validity
+		if (/[a-zA-Z0-9]{5,25}/.test(username.value)) {
+			// If the regex is succedded then we continue the process
+
+			// Verifying the passwords and confirm passwords
+			if (password.value == confirmPassword.value) {
+				// If the user entered password and confirm passwords are matched, then we will continue the process
+
+				// Creating the data for POST value
+				let data = JSON.stringify({username : username.value, password : password.value});
+
+				// Sending the POST request using the fetch method
+				fetch('/signup', {body : data, method : 'post', headers : {'Accept': 'application/json', 'Content-Type' : 'application/json'}}).then(response => response.text()).then(response => {
+					/* After fetching the response, this function is executed, where we will check the type of the response from the server. */
+
+					if (response == 'success') {
+						// If the response from the server states success in creation of the new user, then we redirect the user to the home (index /) page
+
+						alert('User creation success! Now, you can log in using the username and password combination.');
+						location.href = '/';
+					} else {
+						// If the response from the server states anything else than succes, then we return an error stating the user failed to be registered and also we display an error message (we throw just an custom error with the response as the error message)
+
+						throw Error(response);
+					}
+				}).catch(error => alert(error));
+			} else {
+				// If the user entered password and confirm password field's values does not matches, then we raise an error
+
+				alert('Passwords do not match');
+				return 0;
+			}
+		} else {
+			// If the regex test resulted in false, then we raise an error through window.alert function
+
+			alert('Please enter a proper username with atleast 5 or more alphabets and number combinations.');
+			return 0;
+		}
+	});
+</script>
+</html>

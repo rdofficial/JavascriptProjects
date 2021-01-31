@@ -1,0 +1,96 @@
+/*
+The CSS file for the Biodata Manager - VanillaJS
+
+Note :-
+1. The default CSS properties are set with respect to the mobile version view, and for the desktop version view we use the media keyword to alter the CSS properties for the web page.
+
+Author : Rishav Das
+*/
+
+/* Setting the CSS properties for the entire body element */
+body {
+	background-size: 100%;
+	font-family: Arial;
+}
+
+/* Setting the CSS properties for the container HTML element */
+.container {
+	width: 90%;
+	margin: 5px;
+	padding: 5px;
+	background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Setting the CSS properties for the header HTML element */
+.header {
+	width: 101%;
+	margin: -10px;
+	margin-bottom: 5px;
+	text-align: center;
+	background-color: rgba(0, 0, 0, 0.8);
+	padding: 5px;
+	min-height: 45px;
+	font-size: 25px;
+	font-weight: bold;
+	color: #fff;
+}
+
+/* Setting the CSS properties for the text input boxes */
+input[type="text"] {
+	width: 80%;
+	padding: 5px;
+	margin: 5px;
+	font-size: 15px;
+}
+
+/* Setting the CSS properties for the btn */
+.btn {
+	padding: 7.5px 10px;
+	font-size: 15px;
+	margin: 5px;
+	border-radius: 5px;
+	border: 1px solid #000;
+	color: #000;
+	background-color: #fff;
+}
+.btn:hover {
+	border: 1px solid #fff;
+	background-color: darkgrey;
+	transition-duration: .5s;
+}
+
+/* Setting the CSS properties for the overlook-data and complete-data HTML elements */
+.overlook-data {
+	width: 80%;
+	padding: 5px 15px;
+	margin: 5px;
+	border-radius: 5px;
+	border: 1px solid #fff;
+	color: #fff;
+}
+.show-btn {
+	margin: 5px 10px;
+}
+.complete-data {
+	padding: 5px;
+	color: #fff;
+	display: none;
+	border-top: 1px solid #fff;
+	transition-duration: .5s;
+	width: 95%;
+	margin: 5px 10px;
+}
+
+@media only screen and (min-width: 850px) {
+	/* Change in CSS properties of some elements w.r.t the desktop version view */
+
+	.header {
+		min-height: 50px;
+		font-size: 30px;
+	}
+
+	.container {
+		margin: 5px 10%;
+		width: 80%;
+	}
+}

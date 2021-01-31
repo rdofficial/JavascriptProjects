@@ -1,0 +1,107 @@
+/*
+CSS file for the Film Watchlist Manager - VanillaJS
+
+Note :-
+1. The default CSS properties are set with respect to the mobile screens and devices. For desktop screens and devices, we need to use the media keyword for the alteration of the CSS properties of certain elements. 
+
+Author : Rishav Das
+*/
+
+/* Setting the CSS properties for the body element */
+body {
+	font-family: sans-serif;
+	background-image: linear-gradient(to bottom, #34495e, #2c3e50);
+	background-size: 100%;
+}
+
+/* Setting the CSS properties for the header HTML element */
+.header {
+	width: 100%;
+	margin: 5px -10px;
+	margin-top: -7.5px;
+	padding: 10px;
+	min-height: 50px;
+	color: #fff;
+	font-size: 25px;
+	font-weight: bold;
+	background-color: rgba(0, 0, 0, 0.7);
+	text-align: center;
+}
+
+/* Setting the CSS properties for the container HTML element */
+.container {
+	width: 90%;
+	margin: 5px 10px;
+	padding: 5px;
+	background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* Setting the CSS properties for the text input box elements */
+input[type="text"] {
+	width: 60%;
+	margin: 5px;
+	padding: 5px;
+	font-size: 15px;
+}
+
+/* Setting the CSS properties for the btn HTML element */
+.btn {
+	padding: 7.5px 10px;
+	margin: 5px;
+	border: 1px solid #000;
+	color: #000;
+	background-color: #fff;
+	border-radius: 5px;
+	font-size: 15px;
+}
+.btn:hover {
+	color: #fff;
+	background-color: #000;
+	border: 1px solid #fff;
+	transition-duration: .5s;
+}
+
+/* Setting the CSS properties for the film-card and its inner components */
+.film-card {
+	width: 90%;
+	margin: 5px;
+	padding: 5px;
+	color: #fff;
+	border: 1px solid #fff;
+	border-radius: 5px;
+}
+.film-card .film-name {
+	font-size: 14px;
+	font-weight: bold;
+	margin: 5px;
+	align-self: left;
+}
+.film-card .film-datetime {
+	font-size: 10px;
+	color: #fafafa;
+	position: relative;
+	right: 0px;
+}
+
+
+@media only screen and (min-width: 850px) {
+	/* The change in CSS properties of certain elements if the screen type is of a desktop monitor */
+
+	/* Change in CSS properties of the header w.r.t. desktop screens */
+	.header {
+		font-size: 30px;
+	}
+
+	.container {
+		width: 80%;
+		margin: 5px 10%;
+	}
+
+	input[type="text"] {
+		width: 80%;
+	}
+
+	.film-card .film-name {
+		font-size: 15px;
+	}
+}

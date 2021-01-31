@@ -1,0 +1,37 @@
+<!--
+The main HTML file for Biodata Manager - VanillaJS
+
+Author : Rishav Das
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Biodata Manager</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<!-- The body section of the web page -->
+
+	<!-- The header of the web page -->
+	<div class="header">Biodata Manager</div>
+
+	<!-- The form for the fillup of new data item -->
+	<div class="container">
+		<h3 style="color: #fff;">Enter the data here</h3>
+		<input type="text" name="first-name" placeholder="First Name">
+		<input type="text" name="last-name" placeholder="Last Name">
+		<input type="text" name="address" placeholder="Address">
+		<input type="text" name="programming-languages" placeholder="Programming languages known (separate by ;)">
+		<input type="text" name="frameworks" placeholder="Frameworks known (separate by ;)"><br>
+		<button class="btn" id="add-item-btn">Add Data</button>
+	</div>
+
+	<!-- The HTML container to show up the existing data in the localStorage of the web browser -->
+	<div class="container" id="data-container"></div>
+</body>
+<!-- Linking the main javascript file with the index.html file -->
+<script type="text/javascript" src="script.js"></script>
+</html>

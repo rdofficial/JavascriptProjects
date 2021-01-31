@@ -1,0 +1,16 @@
+# The Ignore List File for the Javascript Projects Repository
+
+# Note :-
+# 1. Ignore those folders which contains the projects which are already having their own separate repositories
+
+# Projects with separate repositories
+
+# ---- VanillaJs Projects ----
+VanillaJsEncrypter/
+VanillaJsInstagramFetcher/
+VanillaJsMarvelSupsFetcher/
+VanillaJsNotesManager/
+VanillaJsStonePaperScissors/
+
+# ---- NodeJs Projects ----
+NodeJsAnonHtmlHoster/

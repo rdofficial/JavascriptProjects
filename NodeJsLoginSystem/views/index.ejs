@@ -1,0 +1,35 @@
+<!-- The index page for the web application -->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Login System - NodeJS</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<!-- Linking the HTML doc to the Bootstrap CSS -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+</head>
+
+<body>
+	<!-- The body section of the page -->
+
+	<!-- The header -->
+	<nav class="navbar navbar-dark bg-dark">
+  		<a class="navbar-brand mx-2" href="#">Home - Login System (NodeJS)</a>
+	</nav>
+
+	<!-- The welcome user message -->
+	<div class="container my-5">
+		<% if (username == undefined) { %>
+		<h3>You are not logged in, <a href="/login">Click here</a> to go to the login page</h3>
+		<% } else { %>
+		<h2>Welcome <b><%= username %></b>!</h2>
+		<a class="btn btn-danger" href="/logout">Log Out</a>
+		<% } %>
+	</div>
+</body>
+
+<!-- Linking the HTML doc to the external Boostrap required JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+
+</html>
