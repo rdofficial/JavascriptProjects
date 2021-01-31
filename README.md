@@ -1,6 +1,6 @@
 # JavaScript Projects
 
-Below list are all the projects (applications, tools) created under this series.
+Below list are all the projects (applications, tools) created under this main project series. Click on the title heading to visit the folder (repository) of each projects.
 
 ### [Encrypter (VanillaJs)](https://github.com/rdofficial/VanillaJsEncrypter/)
 
@@ -24,19 +24,33 @@ This project is a single web page application, made using Vanilla javascript. Th
 
 ### [Marvel Sups Fetcher (VanillaJs)](https://github.com/rdofficial/VanillaJsMarvelSupsFetcher/)
 
-Still in making...Please wait sooner!!!
+Still in making...Please wait!!!
 
-### [Authenticaton System (NodeJs)](NodeJsAuthenticationSystem/)
+### [Stone-Paper-Scissors (VanillaJs)](https://github.com/rdofficial/VanillaJsStonePaperScissors/)
 
-Still in making...Please wait sooner!!!
+Still in making...Please wait!!!
+
+### [Login System (NodeJs)](NodeJsLoginSystem/)
+
+This project is a login system web application, made using NodeJs framework. The NodeJs is a backend javascript language used for creating web application. The login system web application implements the use of session for user account logins. Here different users can create their particular accounts with specific usernames and passwords, they can further login into their account. The application does not uses a database to store the user account credentials, instead it uses the JSON files to store the user account data. The web application only does allows to create new accounts, login and home page. There are no additional features served, the application / project is intended for learning purposes and this can be a perfect project for beginners in web developement. The frontend designing is relied on Bootstrap, you can further add more features and functions as per your choice. Concepts that you will learn by doing this project are :
+	* Creation of web application using _Express.js_
+	* Handling of POST and GET requests on an express app
+	* Creating sessions in express app
+	* Encryption of data with user password hashing.
+	* Writting and reading JSON files on the filesystem
 
 ### [Thoughts Manager (NodeJs)](NodeJsThoughtsManager)
 
-Still in making...Please wait sooner!!!
+This project is a web application made using NodeJs framework. The web application serves the purpose of storing thoughts and notes of users, and also the application provides the user to login using their specific user accounts (with username and password). Each user gets their separate place to store their data. Each user gets to login into their account and then store or delete the thoughts. The web application makes the use of JSON files to store the web application data instead of using any database server. The frontend part of this web application is relied on Bootstrap, and further UI designs can be made by you.This project is intended for learning for beginners in web developement. The concepts that a beginner can learn while making this project are :
+	* All concepts of Login System
+	* Handling of data of particular user
 
 ### [Anonymous HTML Hoster (NodeJs)](https://github.com/rdofficial/NodeJsAnonHtmlHoster)
 
-Still in making...Please wait sooner!!!
+This project is a web application made using NodeJs framework. The web application serves the sole purpose of hosting HTML documents freely and without any domain restrictions. You can host your written HTML document with your specific URL and post the uploading process, the HTML file is hosted at the specified file Id. The frontend part of this web application is relied on Bootstrap, and further UI designs can be made by you. This web application is a beginner level project as well as a production level project. The project is also made in other backend languages like PHP and Django, They are too hosted on the [author's github profile](https://github.com/rdofficial). Making the application, you can grasp the following terms :
+	* GET and POST request and body data handling
+	* Using JSON files instead of database to store web application's data
+	* Accessing and working with URL params
 
 ## About the author
 
