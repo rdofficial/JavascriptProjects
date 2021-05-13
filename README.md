@@ -45,7 +45,7 @@ This project is a web application made using NodeJs framework. The web applicati
 	* All concepts of Login System
 	* Handling of data of particular user
 
-### [Anonymous HTML Hoster (NodeJs)](https://github.com/rdofficial/NodeJsAnonHtmlHoster)
+### [Anonymous HTML Hoster (NodeJs)](https://github.com/rdofficial/AnonHtmlHoster)
 
 This project is a web application made using NodeJs framework. The web application serves the sole purpose of hosting HTML documents freely and without any domain restrictions. You can host your written HTML document with your specific URL and post the uploading process, the HTML file is hosted at the specified file Id. The frontend part of this web application is relied on Bootstrap, and further UI designs can be made by you. This web application is a beginner level project as well as a production level project. The project is also made in other backend languages like PHP and Django, They are too hosted on the [author's github profile](https://github.com/rdofficial). Making the application, you can grasp the following terms :
 	* GET and POST request and body data handling
